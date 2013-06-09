@@ -1,6 +1,7 @@
 package org.discotools.gwt.leaflet.client.layers.others;
 
 import org.discotools.gwt.leaflet.client.Options;
+import org.discotools.gwt.leaflet.client.events.handler.EventProvider;
 import org.discotools.gwt.leaflet.client.jsobject.JSObject;
 import org.discotools.gwt.leaflet.client.jsobject.JSObjectArray;
 import org.discotools.gwt.leaflet.client.layers.ILayer;
@@ -17,7 +18,7 @@ import org.discotools.gwt.leaflet.client.types.LatLngBounds;
  * @see <a href="http://leaflet.cloudmade.com/reference.html#featuregroup">L.FeatureGroup (Leaflet API)</a>
  *
  */
-public class FeatureGroup extends LayerGroup {
+public class FeatureGroup extends LayerGroup implements EventProvider {
 
 	protected FeatureGroup(JSObject element) {
 		super(element);
@@ -38,7 +39,7 @@ public class FeatureGroup extends LayerGroup {
 	 * @return {@link FeatureGroup}
 	 */
 	public FeatureGroup addLayer(ILayer layer) {
-		FeatureGroupImpl.addTo(getJSObject(), layer.getJSObject());		
+		FeatureGroupImpl.addLayer(getJSObject(), layer.getJSObject());		
 		return this;
 	}
 

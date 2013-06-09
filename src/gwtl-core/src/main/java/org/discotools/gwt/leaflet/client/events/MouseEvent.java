@@ -3,6 +3,7 @@ package org.discotools.gwt.leaflet.client.events;
 import org.discotools.gwt.leaflet.client.jsobject.JSObject;
 import org.discotools.gwt.leaflet.client.types.LatLng;
 import org.discotools.gwt.leaflet.client.types.Point;
+import org.discotools.gwt.leaflet.client.layers.ILayer;
 
 
 /**
@@ -66,6 +67,14 @@ public class MouseEvent extends Event {
      */
     private final native JSObject layerPoint()/*-{
         return this.layerPoint;
+    }-*/;
+
+    public final ILayer getLayer(){
+        return new ILayer(layer());
+    }
+
+    private final native JSObject layer()/*-{
+        return this.layer;
     }-*/;
     
     /**
