@@ -123,6 +123,10 @@ class MapImpl {
         return self.getZoom();
     }-*/;
 
+    public static native int getBoundsZoom(JSObject self, JSObject bound) /*-{
+        return self.getBoundsZoom(bound);
+    }-*/;
+
 
     public static native void invalidateSize(JSObject self, boolean animate) /*-{
         self.invalidateSize( animate);

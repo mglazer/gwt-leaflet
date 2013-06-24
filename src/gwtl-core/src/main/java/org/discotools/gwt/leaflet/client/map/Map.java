@@ -170,6 +170,10 @@ public class Map extends JSObjectWrapper implements EventProvider {
         return MapImpl.getZoom(getJSObject());
     }
 
+    public int getBoundsZoom(LatLngBounds bounds) {
+        return MapImpl.getBoundsZoom(getJSObject(), bounds.getJSObject());
+    }
+
     /**
      * Checks if the map container size changed and updates the map if so — call it after you've changed the map size dynamically. If animate is true, map animates the update
      * @param animate
