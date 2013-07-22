@@ -134,6 +134,15 @@ public class Map extends JSObjectWrapper implements EventProvider {
         return new LatLngBounds(MapImpl.getBounds(getJSObject()));
     }
 
+
+    /**
+     *
+     * @return The center of the viewport
+     */
+    public LatLng getCenter() {
+        return new LatLng(MapImpl.getCenter(getJSObject()));
+    }
+
     /**
      * Pans the map to a given center. Makes an animated pan if new center is not more than one screen away from the current one.
      * @param latLng
